@@ -1,3 +1,9 @@
 node_modules/
-.next/
-.nuxt/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+yarn-error.log*
+dist/
+build/
+.DS_Store

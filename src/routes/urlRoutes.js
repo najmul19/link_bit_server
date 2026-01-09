@@ -5,7 +5,6 @@ const generateShortCode = require('../utils/shortCode');
 
 const router = express.Router();
 
-// Create short URL (protected)
 router.post('/', auth, async (req, res) => {
   try {
     const { originalUrl } = req.body;
@@ -13,7 +12,7 @@ router.post('/', auth, async (req, res) => {
       return res.status(400).json({ message: 'originalUrl is required' });
     }
 
-    // simple URL validation
+ 
     try {
       new URL(originalUrl);
     } catch (e) {
@@ -64,7 +63,7 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
-// Get all URLs of logged-in user (protected)
+
 router.get('/', auth, async (req, res) => {
   try {
     const userId = req.user.uid;
@@ -86,7 +85,7 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
-// Delete a URL (protected)
+
 router.delete('/:id', auth, async (req, res) => {
   try {
     const userId = req.user.uid;
